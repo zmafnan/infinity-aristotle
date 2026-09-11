@@ -30,6 +30,9 @@ const translations = {
     "safety-repo-desc": "Dokumentasi komprehensif unbrick dan panduan pasang engpreloader untuk Xiaomi MediaTek.",
     "btn-open-guide": "Buka Panduan Unbrick",
     "safety-callout": "<strong>Mengapa engpreloader krusial?</strong> <code>engpreloader</code> memungkinkan perangkat Anda tetap dapat diakses via BROM mode untuk unbrick melalui SP Flash Tool / MTKClient tanpa memerlukan Authorized Mi Account jika terjadi kondisi darurat.",
+    "eng-flash-title": "Cara Pasang ENG Preloader via Fastboot",
+    "eng-flash-desc": "Unduh berkas <code>preloader_aristotle.bin</code> dari folder Google Drive di bawah, lalu jalankan perintah berikut saat ponsel berada di <strong>Mode Fastboot</strong>:",
+    "eng-flash-note": "<em>Catatan: Jika nama berkas yang Anda unduh berbeda, sesuaikan nama berkas pada perintah di atas. Pastikan kedua perintah menghasilkan status <code>OKAY</code>.</em>",
 
     "prereq-title": "Prasyarat Instalasi",
     "btn-download-all": "Unduh Berkas ROM & Recovery",
@@ -95,6 +98,9 @@ const translations = {
     "safety-repo-desc": "Comprehensive unbrick documentation and engpreloader installation guide for Xiaomi MediaTek devices.",
     "btn-open-guide": "Open Unbrick Guide",
     "safety-callout": "<strong>Why is engpreloader critical?</strong> <code>engpreloader</code> ensures your device remains accessible via BROM mode for unbricking using SP Flash Tool / MTKClient without requiring an Authorized Mi Account in emergencies.",
+    "eng-flash-title": "How to Flash ENG Preloader via Fastboot",
+    "eng-flash-desc": "Download the <code>preloader_aristotle.bin</code> file from the Google Drive folder below, then run the following commands while the device is in <strong>Fastboot Mode</strong>:",
+    "eng-flash-note": "<em>Note: If the downloaded file has a different name, adjust the filename in the commands above. Ensure both commands output an <code>OKAY</code> status.</em>",
 
     "prereq-title": "Installation Prerequisites",
     "btn-download-all": "Download ROM & Recovery Files",

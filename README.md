@@ -31,8 +31,15 @@ Seluruh berkas resmi yang dibutuhkan (paket ZIP ROM, recovery kernel `vendor_boo
 ---
 
 ## 🛡️ Pengamanan Anti-Brick (Wajib)
-Sebelum menyentuh partisi sistem, pelajari panduan unbrick dan pastikan perangkat Anda sudah terpasang `engpreloader`:  
+Sebelum menyentuh partisi sistem, pelajari panduan unbrick dan pasang `engpreloader` sebagai jaring pengaman:  
 👉 **[TheFormidable/Unbrick (MediaTek Unbrick Guide)](https://github.com/TheFormidable/Unbrick)**
+
+**Cara Pasang ENG Preloader via Fastboot:**
+```bash
+fastboot flash preloader1 preloader_aristotle.bin
+fastboot flash preloader2 preloader_aristotle.bin
+```
+*(Berkas `preloader_aristotle.bin` tersedia di folder Google Drive di atas).*
 
 ---
 

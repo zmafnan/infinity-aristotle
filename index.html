@@ -155,6 +155,27 @@
             <strong>Mengapa engpreloader krusial?</strong> <code>engpreloader</code> memungkinkan perangkat Anda tetap dapat diakses via BROM mode untuk unbrick melalui SP Flash Tool / MTKClient tanpa memerlukan Authorized Mi Account jika terjadi kondisi darurat.
           </p>
         </div>
+
+        <!-- How to flash ENG Preloader -->
+        <div class="eng-flash-box">
+          <h3 class="eng-flash-title" data-i18n="eng-flash-title">Cara Pasang ENG Preloader via Fastboot</h3>
+          <p data-i18n="eng-flash-desc">
+            Unduh berkas <code>preloader_aristotle.bin</code> dari folder Google Drive di bawah, lalu jalankan perintah berikut saat ponsel berada di <strong>Mode Fastboot</strong>:
+          </p>
+          <div class="code-container">
+            <div class="code-header">
+              <span class="code-lang">bash</span>
+              <button class="copy-btn" data-clipboard="fastboot flash preloader1 preloader_aristotle.bin && fastboot flash preloader2 preloader_aristotle.bin" aria-label="Copy Command">
+                <span class="copy-text" data-i18n="btn-copy">Salin</span>
+              </button>
+            </div>
+            <pre><code>fastboot flash preloader1 preloader_aristotle.bin
+fastboot flash preloader2 preloader_aristotle.bin</code></pre>
+          </div>
+          <p class="step-note" data-i18n="eng-flash-note">
+            <em>Catatan: Jika nama berkas yang Anda unduh berbeda, sesuaikan nama berkas pada perintah di atas. Pastikan kedua perintah menghasilkan status <code>OKAY</code>.</em>
+          </p>
+        </div>
       </div>
     </section>
 

@@ -480,6 +480,20 @@ body {
   margin-top: 2px;
 }
 
+/* ENG Preloader Flash Box */
+.eng-flash-box {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.eng-flash-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
 /* Checklist */
 .checklist {
   display: grid;
