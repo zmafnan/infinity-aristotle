@@ -52,6 +52,19 @@
         Panduan instalasi resmi dan dokumentasi teknis custom ROM Infinity-X untuk Xiaomi 13T, berbasis firmware HyperOS 2.0.
       </p>
 
+      <!-- Hero Actions -->
+      <div class="hero-actions">
+        <a href="https://drive.google.com/drive/folders/1RnJlZwnyjewAkAO2lLtFFk0Xj7NHnkwN?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="hero-download-btn">
+          <span>📥</span>
+          <span data-i18n="btn-download-all">Unduh Berkas ROM & Recovery</span>
+          <span class="arrow-icon">↗</span>
+        </a>
+        <a href="#steps" class="btn btn-secondary" id="hero-guide-btn">
+          <span data-i18n="btn-view-steps">Lihat Langkah Flashing</span>
+          <span>↓</span>
+        </a>
+      </div>
+
       <!-- Meta Badges -->
       <div class="badge-row">
         <div class="badge">
@@ -187,8 +200,36 @@
       </div>
     </section>
 
+    <!-- Download Center Section -->
+    <section class="card download-card" id="downloads">
+      <div class="card-header">
+        <div class="card-icon dl-icon">📥</div>
+        <div>
+          <span class="step-pill info-pill" data-i18n="download-pill">GOOGLE DRIVE FOLDER</span>
+          <h2 class="card-title" data-i18n="download-title">Pusat Unduhan Berkas (Downloads)</h2>
+        </div>
+      </div>
+      <div class="card-body">
+        <p data-i18n="download-desc">
+          Seluruh berkas yang dibutuhkan (Recovery <code>vendor_boot.img</code>, paket ZIP ROM, dan berkas pendukung) telah saya sediakan dalam satu folder Google Drive terpadu berikut:
+        </p>
+
+        <div class="link-banner dl-banner">
+          <div class="link-info">
+            <span class="repo-owner">Google Drive /</span>
+            <span class="repo-name">Infinity-X Aristotle Release Files</span>
+            <p class="repo-desc" data-i18n="download-contents-desc">Isi folder: vendor_boot.img (Recovery), Infinity-X ROM ZIP, dan kelengkapan terkait.</p>
+          </div>
+          <a href="https://drive.google.com/drive/folders/1RnJlZwnyjewAkAO2lLtFFk0Xj7NHnkwN?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="main-download-link">
+            <span data-i18n="btn-open-drive">Buka Folder Google Drive</span>
+            <span class="arrow-icon">↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
     <!-- Step by Step Flashing Guide -->
-    <section class="card">
+    <section class="card" id="steps">
       <div class="card-header">
         <div class="card-icon flash-icon">⚡</div>
         <h2 class="card-title" data-i18n="steps-title">Tata Cara Instalasi (Clean Flash)</h2>
