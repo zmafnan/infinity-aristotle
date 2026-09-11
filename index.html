@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Xiaomi 13T (aristotle) — Infinity-X Installation Guide</title>
+  <meta name="description" content="Official Installation Guide & Documentation for Project Infinity-X on Xiaomi 13T (aristotle) based on HyperOS 2.0 firmware." />
+  
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Background Glow Accents -->
+  <div class="glow-sphere glow-1"></div>
+  <div class="glow-sphere glow-2"></div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#" class="brand">
+        <span class="brand-logo">∞</span>
+        <span class="brand-name">Infinity-X <span class="brand-sub">/ aristotle</span></span>
+      </a>
+
+      <div class="nav-actions">
+        <div class="lang-switch" id="langSwitch" role="group" aria-label="Language Switcher">
+          <button class="lang-btn active" data-lang="id" id="btn-lang-id">ID</button>
+          <button class="lang-btn" data-lang="en" id="btn-lang-en">EN</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="container">
+    
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="device-tag">
+        <span class="pulse-dot"></span>
+        <span data-i18n="tag-device">Xiaomi 13T (aristotle)</span>
+      </div>
+      <h1 class="hero-title">
+        <span class="gradient-text">Project Infinity-X</span><br />
+        <span data-i18n="hero-subtitle">Installation Guide & Documentation</span>
+      </h1>
+      <p class="hero-desc" data-i18n="hero-desc">
+        Panduan instalasi resmi dan dokumentasi teknis custom ROM Infinity-X untuk Xiaomi 13T, berbasis firmware HyperOS 2.0.
+      </p>
+
+      <!-- Meta Badges -->
+      <div class="badge-row">
+        <div class="badge">
+          <span class="badge-label" data-i18n="badge-base-label">Base Firmware</span>
+          <span class="badge-value">HyperOS 2.0 (OS2.0.214.0.VMFMIXM)</span>
+        </div>
+        <div class="badge">
+          <span class="badge-label" data-i18n="badge-soc-label">Chipset</span>
+          <span class="badge-value">MediaTek Dimensity 8200 Ultra</span>
+        </div>
+        <div class="badge">
+          <span class="badge-label" data-i18n="badge-android-label">Android Version</span>
+          <span class="badge-value">Android 15 (AOSP)</span>
+        </div>
+        <div class="badge">
+          <span class="badge-label" data-i18n="badge-dev-label">Development</span>
+          <span class="badge-value" data-i18n="badge-dev-value">Independent / Solo Maintainer</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Important Notice / Reality Check -->
+    <section class="card alert-card">
+      <div class="card-header">
+        <div class="card-icon warning-icon">⚠️</div>
+        <h2 class="card-title" data-i18n="notice-title">Catatan Penting & Ketentuan</h2>
+      </div>
+      <div class="card-body notice-list">
+        <div class="notice-item">
+          <span class="notice-num">01</span>
+          <div>
+            <strong data-i18n="notice-1-strong">Status Proyek Mandiri</strong>
+            <p data-i18n="notice-1-desc">
+              ROM ini saya kembangkan secara mandiri di sela waktu luang. Jika prioritas utama Anda adalah kestabilan 100% untuk penggunaan harian tanpa kompromi, saya sangat menyarankan Anda untuk <strong>tetap menggunakan HyperOS resmi bawaan pabrik</strong>.
+            </p>
+          </div>
+        </div>
+        <div class="notice-item">
+          <span class="notice-num">02</span>
+          <div>
+            <strong data-i18n="notice-2-strong">Pemahaman Risiko Platform MediaTek</strong>
+            <p data-i18n="notice-2-desc">
+              Modifikasi sistem pada perangkat MediaTek (Dimensity 8200 Ultra) memerlukan kehati-hatian ekstra. Pastikan Anda sudah memahami segala konsekuensinya dan bersedia bertanggung jawab penuh atas perangkat Anda masing-masing (<em>Do With Your Own Risk - DWYOR</em>).
+            </p>
+          </div>
+        </div>
+        <div class="notice-item">
+          <span class="notice-num">03</span>
+          <div>
+            <strong data-i18n="notice-3-strong">Penyampaian Kendala & Laporan Bug</strong>
+            <p data-i18n="notice-3-desc">
+              Jika Anda menemukan kendala atau bug pada ROM ini, mohon untuk tidak sekadar menyampaikan keluhan tanpa data teknis. Sertakan <strong>logcat</strong> dan penjelasan langkah terjadinya masalah secara objektif agar kendala tersebut dapat saya telusuri.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mandatory Safety Precaution (Anti-Brick) -->
+    <section class="card safety-card">
+      <div class="card-header">
+        <div class="card-icon shield-icon">🛡️</div>
+        <div>
+          <span class="step-pill danger-pill" data-i18n="safety-pill">WAJIB DILAKUKAN</span>
+          <h2 class="card-title" data-i18n="safety-title">Langkah Pengamanan (Anti-Brick)</h2>
+        </div>
+      </div>
+      <div class="card-body">
+        <p data-i18n="safety-desc">
+          Sebelum menyentuh partisi sistem atau melakukan proses flashing apa pun, Anda <strong>wajib</strong> membaca panduan unbrick dan memasang <code>engpreloader</code> sebagai jaring pengaman utama:
+        </p>
+
+        <div class="link-banner">
+          <div class="link-info">
+            <span class="repo-owner">TheFormidable /</span>
+            <span class="repo-name">Unbrick (MediaTek Guide)</span>
+            <p class="repo-desc" data-i18n="safety-repo-desc">Dokumentasi komprehensif unbrick dan panduan pasang engpreloader untuk Xiaomi MediaTek.</p>
+          </div>
+          <a href="https://github.com/TheFormidable/Unbrick" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="unbrick-link">
+            <span data-i18n="btn-open-guide">Buka Panduan Unbrick</span>
+            <span class="arrow-icon">↗</span>
+          </a>
+        </div>
+
+        <div class="callout callout-info">
+          <span class="callout-icon">ℹ️</span>
+          <p data-i18n="safety-callout">
+            <strong>Mengapa engpreloader krusial?</strong> <code>engpreloader</code> memungkinkan perangkat Anda tetap dapat diakses via BROM mode untuk unbrick melalui SP Flash Tool / MTKClient tanpa memerlukan Authorized Mi Account jika terjadi kondisi darurat.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Prerequisites -->
+    <section class="card">
+      <div class="card-header">
+        <div class="card-icon check-icon">📋</div>
+        <h2 class="card-title" data-i18n="prereq-title">Prasyarat Instalasi</h2>
+      </div>
+      <div class="card-body">
+        <div class="checklist">
+          <div class="checklist-item">
+            <span class="check-box">✓</span>
+            <div>
+              <strong data-i18n="prereq-1-title">Bootloader Terbuka (UBL)</strong>
+              <p data-i18n="prereq-1-desc">Perangkat Xiaomi 13T sudah dalam status resmi Unlocked Bootloader.</p>
+            </div>
+          </div>
+          <div class="checklist-item">
+            <span class="check-box">✓</span>
+            <div>
+              <strong data-i18n="prereq-2-title">Wajib Firmware HyperOS 2.0 Global</strong>
+              <p data-i18n="prereq-2-desc">
+                Perangkat harus sudah terpasang firmware <code>OS2.0.214.0.VMFMIXM</code> Global (atau sesama HyperOS 2 Global) sebelum flashing, karena vendor tree yang saya gunakan diekstrak dari versi ini.
+              </p>
+            </div>
+          </div>
+          <div class="checklist-item">
+            <span class="check-box">✓</span>
+            <div>
+              <strong data-i18n="prereq-3-title">Daya Baterai & Alat</strong>
+              <p data-i18n="prereq-3-desc">Baterai minimal 50%–60%, kabel USB berkualitas, dan PC dengan driver ADB & Fastboot terpasang.</p>
+            </div>
+          </div>
+          <div class="checklist-item">
+            <span class="check-box">✓</span>
+            <div>
+              <strong data-i18n="prereq-4-title">Pencadangan Data Penuh (Backup)</strong>
+              <p data-i18n="prereq-4-desc">Seluruh data internal akan terhapus total (Format Data wajib dilakukan saat clean flash).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Step by Step Flashing Guide -->
+    <section class="card">
+      <div class="card-header">
+        <div class="card-icon flash-icon">⚡</div>
+        <h2 class="card-title" data-i18n="steps-title">Tata Cara Instalasi (Clean Flash)</h2>
+      </div>
+      <div class="card-body">
+        
+        <!-- Step 1 -->
+        <div class="step-block">
+          <div class="step-badge">1</div>
+          <div class="step-content">
+            <h3 class="step-title" data-i18n="step-1-title">Masuk ke Mode Fastboot</h3>
+            <p data-i18n="step-1-desc">
+              Matikan perangkat secara menyeluruh. Tekan dan tahan tombol <strong>Volume Bawah (-) + Tombol Daya (Power)</strong> secara bersamaan hingga muncul tampilan logo Fastboot di layar, lalu hubungkan perangkat ke komputer menggunakan kabel USB.
+            </p>
+            <div class="code-container">
+              <div class="code-header">
+                <span class="code-lang">bash</span>
+                <button class="copy-btn" data-clipboard="fastboot devices" aria-label="Copy Command">
+                  <span class="copy-text" data-i18n="btn-copy">Salin</span>
+                </button>
+              </div>
+              <pre><code>fastboot devices</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step-block">
+          <div class="step-badge">2</div>
+          <div class="step-content">
+            <h3 class="step-title" data-i18n="step-2-title">Flash Recovery (vendor_boot)</h3>
+            <p data-i18n="step-2-desc">
+              Pasang berkas recovery kernel bawaan ROM (<code>vendor_boot.img</code>) ke partisi vendor_boot perangkat:
+            </p>
+            <div class="code-container">
+              <div class="code-header">
+                <span class="code-lang">bash</span>
+                <button class="copy-btn" data-clipboard="fastboot flash vendor_boot vendor_boot.img" aria-label="Copy Command">
+                  <span class="copy-text" data-i18n="btn-copy">Salin</span>
+                </button>
+              </div>
+              <pre><code>fastboot flash vendor_boot vendor_boot.img</code></pre>
+            </div>
+            <p class="step-note" data-i18n="step-2-note">Pastikan eksekusi perintah menghasilkan keterangan <code>OKAY</code>.</p>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step-block">
+          <div class="step-badge">3</div>
+          <div class="step-content">
+            <h3 class="step-title" data-i18n="step-3-title">Masuk ke Mode Recovery</h3>
+            <p data-i18n="step-3-desc">
+              Nyalakan ulang perangkat langsung ke mode recovery yang baru saja dipasang:
+            </p>
+            <div class="code-container">
+              <div class="code-header">
+                <span class="code-lang">bash</span>
+                <button class="copy-btn" data-clipboard="fastboot reboot recovery" aria-label="Copy Command">
+                  <span class="copy-text" data-i18n="btn-copy">Salin</span>
+                </button>
+              </div>
+              <pre><code>fastboot reboot recovery</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="step-block">
+          <div class="step-badge">4</div>
+          <div class="step-content">
+            <h3 class="step-title" data-i18n="step-4-title">Format Data (Wajib Clean Flash)</h3>
+            <p data-i18n="step-4-desc">
+              Setelah berada di layar Recovery:<br />
+              1. Navigasikan menggunakan tombol volume dan gunakan tombol daya untuk memilih menu <strong>Factory Reset</strong>.<br />
+              2. Pilih <strong>Format data / factory reset</strong>, lalu konfirmasi dengan memilih <strong>Format data</strong>.<br />
+              3. Tunggu hingga proses penghapusan data internal selesai (<em>Data wipe complete</em>).
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="step-block">
+          <div class="step-badge">5</div>
+          <div class="step-content">
+            <h3 class="step-title" data-i18n="step-5-title">Pemasangan ROM via ADB Sideload</h3>
+            <p data-i18n="step-5-desc">
+              1. Kembali ke menu utama Recovery.<br />
+              2. Pilih <strong>Apply update</strong> lalu pilih <strong>Apply from ADB</strong>.<br />
+              3. Di komputer, jalankan perintah berikut:
+            </p>
+            <div class="code-container">
+              <div class="code-header">
+                <span class="code-lang">bash</span>
+                <button class="copy-btn" data-clipboard="adb sideload rom_filename.zip" aria-label="Copy Command">
+                  <span class="copy-text" data-i18n="btn-copy">Salin</span>
+                </button>
+              </div>
+              <pre><code>adb sideload rom_filename.zip</code></pre>
+            </div>
+            <div class="callout callout-info">
+              <span class="callout-icon">💡</span>
+              <p data-i18n="step-5-note">
+                <strong>Catatan Indikator:</strong> Di terminal komputer proses umumnya berhenti di sekitar <strong>47%</strong> atau <code>Total xfer: 1.00x</code>, dan pada layar ponsel akan muncul pesan <code>Install completed with status 0</code>. Hal ini menandakan proses transfer berkas ROM telah berhasil.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 6 -->
+        <div class="step-block">
+          <div class="step-badge">6</div>
+          <div class="step-content">
+            <h3 class="step-title" data-i18n="step-6-title">Konfirmasi Paket Tambahan & Menyalakan Ulang Perangkat</h3>
+            <p data-i18n="step-6-desc">
+              Perhatikan langkah transisi berikut dengan seksama:<br />
+              1. Setelah sideload selesai, pada layar Recovery akan muncul dialog konfirmasi:<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<strong>"Install additional packages?"</strong> (atau pertanyaan pembaruan serupa).<br />
+              2. <strong>Pilih opsi YES</strong>.<br />
+              3. Perangkat akan melakukan restart otomatis dan masuk kembali ke menu <strong>Recovery</strong>.<br />
+              4. Setelah berada kembali di menu Recovery, barulah Anda memilih opsi <strong>Reboot system now</strong>.<br />
+              5. Tunggu proses booting pertama kali yang memakan waktu sekitar <strong>3 hingga 5 menit</strong> hingga masuk ke layar penyiapan awal sistem.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Bug Reporting Guide -->
+    <section class="card">
+      <div class="card-header">
+        <div class="card-icon code-icon">🐛</div>
+        <h2 class="card-title" data-i18n="logcat-title">Cara Mengambil Logcat untuk Laporan Bug</h2>
+      </div>
+      <div class="card-body">
+        <p data-i18n="logcat-desc">
+          Jika Anda menemukan isu teknis, ambil logcat segera setelah kendala terjadi dan lampirkan saat melaporkan:
+        </p>
+        <div class="code-container">
+          <div class="code-header">
+            <span class="code-lang">bash</span>
+            <button class="copy-btn" data-clipboard="adb logcat -d > logcat.txt" aria-label="Copy Command">
+              <span class="copy-text" data-i18n="btn-copy">Salin</span>
+            </button>
+          </div>
+          <pre><code>adb logcat -d > logcat.txt</code></pre>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <p data-i18n="footer-text">
+        Project Infinity-X untuk Xiaomi 13T (aristotle) — Dikembangkan secara mandiri.
+      </p>
+      <p class="footer-sub">
+        Xiaomi, HyperOS, dan Dimensity adalah merek dagang dari pemiliknya masing-masing. Proyek ini tidak berafiliasi dengan Xiaomi Inc.
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
